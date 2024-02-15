@@ -20,5 +20,6 @@
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
     "random-words": "^2.0.1"
-  }
+  },
+  "type": "module"
 }
