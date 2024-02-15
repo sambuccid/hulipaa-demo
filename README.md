@@ -1,2 +1,4 @@
 # hulipaa-demo
-A demo website of how to use hulipaa
+This is a demo of the [Hulipaa](https://github.com/sambuccid/hulipaa) library.
+
+Go and have look at the website.
