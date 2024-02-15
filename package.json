@@ -1,0 +1,24 @@
+{
+  "name": "hulipaa-demo",
+  "version": "1.0.0",
+  "description": "A demo website using the Hulipaa library",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx @11ty/eleventy --serve",
+    "generate-pages": "node generate-pages.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambuccid/hulipaa-demo.git"
+  },
+  "author": "sambuccid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sambuccid/hulipaa-demo/issues"
+  },
+  "homepage": "https://github.com/sambuccid/hulipaa-demo#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy",
+    "random-words": "^2.0.1"
+  }
+}
