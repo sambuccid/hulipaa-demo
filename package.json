@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "npx @11ty/eleventy --serve",
-    "generate-pages": "node generate-pages.js"
+    "compile-tailwind": "npx tailwindcss -i ./site/main.css -o ./site/css/generated.css",
+    "generate-pages": "node generate-pages.mjs"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
   "homepage": "https://github.com/sambuccid/hulipaa-demo#readme",
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
-    "random-words": "^2.0.1"
-  },
-  "type": "module"
+    "random-words": "^2.0.1",
+    "tailwindcss": "^3.4.1"
+  }
 }
