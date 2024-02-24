@@ -7,7 +7,7 @@ const SENTENCES_PER_SECTION = 3
 const SECTIONS_PER_PAGE = 3
 const NUMBER_OF_PAGES = 1000
 const siteFolder = 'site'
-const pageDataFolder = path.join(siteFolder,'data')
+const pageDataFolder = path.join(siteFolder,'_data/pages')
 
 //make directory
 if (fs.existsSync(pageDataFolder)) {
@@ -29,9 +29,10 @@ function savePageData(pageObject) {
 function generatePageObject() {
   return {
     titlePage: generatePageTitle(),
-    sections: [Array.from(
+    sections: Array.from(
       { length: SECTIONS_PER_PAGE },
-      generateSectionObject)]
+      generateSectionObject
+    )
   }
 }
 

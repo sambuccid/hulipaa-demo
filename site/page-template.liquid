@@ -1,0 +1,18 @@
+---
+title: "Page"
+layout: layout.liquid
+pagination:
+  data: pages
+  size: 1
+
+permalink: "/page/{{ pages[pagination.items[0]].titlePage | slug }}.html"
+---
+{%- for pagename in pagination.items -%}
+    <h1>{{ pages[pagename].titlePage }}</h1>
+    {%- for section in pages[pagename].sections -%}
+        <div class="my-2 ms-1">
+            <h2 class="font-medium">{{ section.title }}</h2>
+            <p>{{ section.text }}</p>
+        </div>
+    {%- endfor -%}
+{%- endfor -%}
