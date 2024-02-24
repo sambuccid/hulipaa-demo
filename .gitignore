@@ -2,3 +2,4 @@ dist
 node_modules
 site/_data
 site/css/generated.css
+site/search-results

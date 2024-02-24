@@ -6,7 +6,9 @@
   "scripts": {
     "serve": "npx @11ty/eleventy --serve",
     "compile-tailwind": "npx tailwindcss -i ./site/main.css -o ./site/css/generated.css",
-    "generate-pages": "node generate-pages.mjs"
+    "generate-pages": "node generate-pages.mjs",
+    "generate-results": "node generate-results.mjs",
+    "generate": "npm run generate-pages && npm run generate-results"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
     "random-words": "^2.0.1",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "hulipaa": "^0.1.1"
   }
 }
