@@ -1,18 +1,19 @@
 ---
-title: "Page"
-layout: layout.liquid
+layout: content-layout.liquid
 pagination:
   data: pages
   size: 1
 
 permalink: "/page/{{ pages[pagination.items[0]].titlePage | slug }}.html"
 ---
+<div class="pr-3 sm:pr-8 max-w-2xl mx-auto">
 {%- for pagename in pagination.items -%}
     <h1>{{ pages[pagename].titlePage }}</h1>
     {%- for section in pages[pagename].sections -%}
-        <div class="my-2 ms-1">
+        <div class="my-2">
             <h2 class="font-medium">{{ section.title }}</h2>
             <p>{{ section.text }}</p>
         </div>
     {%- endfor -%}
 {%- endfor -%}
+</div>
