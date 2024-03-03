@@ -5,3 +5,13 @@
 h1 {
     @apply font-semibold text-2xl
 }
+
+/* Customising Hulipaa style */
+
+.hulipaa_searchbar img {
+    display: revert
+}
+
+.hulipaa_searchbar>form>input {
+    @apply border border-solid border-neutral-700 rounded-sm p-0.5 mr-0.5
+}
