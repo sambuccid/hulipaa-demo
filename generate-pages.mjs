@@ -5,7 +5,7 @@ import { generate } from "random-words"
 const WORDS_PER_SENTENCE = 8
 const SENTENCES_PER_SECTION = 3
 const SECTIONS_PER_PAGE = 3
-const NUMBER_OF_PAGES = 1000
+const NUMBER_OF_PAGES = 3000
 const siteFolder = 'site'
 const pageDataFolder = path.join(siteFolder,'_data/pages')
 

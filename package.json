@@ -4,11 +4,13 @@
   "description": "A demo website using the Hulipaa library",
   "main": "index.js",
   "scripts": {
+    "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve",
     "compile-tailwind": "npx tailwindcss -i ./site/main.css -o ./site/css/generated.css",
     "generate-pages": "node generate-pages.mjs",
     "generate-results": "node generate-results.mjs",
-    "generate": "npm run generate-pages && npm run generate-results"
+    "generate": "npm run generate-pages && npm run generate-results",
+    "commit-gh-pages": "npx gh-pages --dotfiles --message 'Generate Website' --dist dist"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,9 @@
   "homepage": "https://github.com/sambuccid/hulipaa-demo#readme",
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
+    "gh-pages": "^6.1.1",
+    "hulipaa": "^0.1.1",
     "random-words": "^2.0.1",
-    "tailwindcss": "^3.4.1",
-    "hulipaa": "^0.1.1"
+    "tailwindcss": "^3.4.1"
   }
 }
