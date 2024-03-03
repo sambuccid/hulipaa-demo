@@ -4,3 +4,16 @@ title: Hulipaa Demo
 ---
 
 <h1 class="text-center">Hulipaa Demo</h1>
+<div class="hulipaa_searchbar"></div>
+<script type="module">
+    import { parseSourcePageText } from '/js/parseFilesHelpers.mjs'
+
+    window.addEventListener('DOMContentLoaded',() => {
+        Hulipaa({
+            parsePage: (fileContent) => ({
+              text: parseSourcePageText(fileContent)
+            }),
+            resultsPath: '/search-results'
+        })
+    });
+</script>

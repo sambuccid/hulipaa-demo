@@ -1,24 +1,23 @@
 import fs from 'fs'
 import path from 'path'
 import Hulipaa from 'hulipaa'
+import { parseSourcePageText,parseSourcePageTitle,parseSourcePagePath } from './site/js/parseFilesHelpers.mjs'
 
 const parseData = (fileContent,filePath) => {
-    const pageObj = JSON.parse(fileContent)
-    const arrayAllSectionsText = pageObj.sections.flatMap((sec) => ([sec.title,sec.text]))
-    const allText = arrayAllSectionsText.reduce((accumulatedText,currentText) =>
-        accumulatedText + ' ' + currentText
-    )
+    const pageFileName = path.basename(filePath)
     return {
-        text: allText,
-        title: pageObj.titlePage,
-        path: `/page/${pageObj.titlePage}`
+        text: parseSourcePageText(fileContent),
+        title: parseSourcePageTitle(fileContent),
+        path: parseSourcePagePath(pageFileName)
     }
 }
 
 const generateLink = (fileName,inputFolder) => {
     const pageFullPath = path.join(inputFolder,fileName)
     const pageContent = fs.readFileSync(pageFullPath,'utf8')
-    return `/page/${pageContent.titlePage}.html`
+    const pageObj = JSON.parse(pageContent)
+    const pageTitle = pageObj.titlePage.toLowerCase()
+    return `/page/${pageTitle}.html`
 }
 
 Hulipaa({
