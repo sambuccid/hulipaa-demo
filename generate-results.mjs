@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import Hulipaa from 'hulipaa'
+import { withBasePath } from './site/js/basePath.mjs'
 import { parseSourcePageText,parseSourcePageTitle,parseSourcePagePath } from './site/js/parseFilesHelpers.mjs'
 
 const parseData = (fileContent,filePath) => {
@@ -17,7 +18,7 @@ const generateLink = (fileName,inputFolder) => {
     const pageContent = fs.readFileSync(pageFullPath,'utf8')
     const pageObj = JSON.parse(pageContent)
     const pageTitle = pageObj.titlePage.toLowerCase()
-    return `/page/${pageTitle}.html`
+    return withBasePath(`/page/${pageTitle}.html`)
 }
 
 Hulipaa({

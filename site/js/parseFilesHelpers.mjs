@@ -1,3 +1,5 @@
+import { withBasePath } from "./basePath.mjs";
+
 export const parseSourcePageText = (fileContent) => {
   const pageObj = JSON.parse(fileContent)
   const arrayAllSectionsText = pageObj.sections.flatMap((sec) => ([sec.title,sec.text]))
@@ -13,5 +15,5 @@ export const parseSourcePageTitle = (fileContent) => {
 }
 
 export const parseSourcePagePath = (pageFileName) => {
-  return `/bare-pages/${pageFileName}`
+  return withBasePath(`/bare-pages/${pageFileName}`)
 }
