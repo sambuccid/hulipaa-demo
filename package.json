@@ -25,7 +25,7 @@
   "devDependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
     "gh-pages": "^6.1.1",
-    "hulipaa": "^0.1.1",
+    "hulipaa": "1.0.1",
     "random-words": "^2.0.1",
     "tailwindcss": "^3.4.1"
   }
